@@ -130,6 +130,7 @@ body {
 
 .section__first {
   background-color: var(--COLOR-VIOLET);
+  background-color: red;
   background-image: url(images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
   background-position: 85% 0;
