@@ -86,6 +86,7 @@ body {
   padding: 2em;
   box-shadow: 1em 1em 2em 0.01em var(--COLOR-DARK-GRAY-BLUE-BLUR);
   border-radius: 1em;
+  text-wrap: wrap;
 }
 
 .div__profile-title {
