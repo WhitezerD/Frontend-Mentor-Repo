@@ -1,0 +1,227 @@
+/*Custom CSS Reset*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url(assets/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf);
+}
+
+:root {
+  /* Fonts */
+  --FF-PM: "Barlow Semi Condensed", sans-serif;
+  --FW-REGULAR: 500;
+  --FW-BOLD: 600;
+  /* Colors */
+  --COLOR-WHITE-BG: hsl(0, 0%, 100%);
+  --COLOR-FONT: hsl(0, 0%, 81%);
+  --COLOR-VIOLET: hsl(263, 55%, 52%);
+  --COLOR-DARK-GRAY-BLUE: hsl(217, 19%, 35%);
+  --COLOR-DARK-GRAY-BLUE-BLUR: hsla(217, 19%, 35%, 0.195);
+  --COLOR-DARK-BLACK-BLUE: hsl(219, 29%, 14%);
+  --COLOR-BG: hsl(210, 46%, 95%);
+}
+
+html {
+  font-family: var(--FF-PM);
+}
+
+body {
+  background-color: var(--COLOR-BG);
+  font-size: 81.25%;
+  font-weight: var(--FW-REGULAR);
+}
+
+.container {
+  max-width: 23.4375rem;
+  margin: 6em auto;
+}
+
+.section__card {
+  margin: 2em;
+  padding: 2em;
+  box-shadow: 1em 1em 2em 0.01em var(--COLOR-DARK-GRAY-BLUE-BLUR);
+  border-radius: 1em;
+  text-wrap: wrap;
+}
+
+.div__profile-title {
+  display: flex;
+}
+
+.div__profile-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 1.5em;
+}
+
+.img__profile {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.p__graduated {
+  font-size: 1.1rem;
+}
+
+.p__highlight,
+.p__content {
+  margin: 1em 0;
+}
+
+.p__highlight {
+  font-weight: var(--FW-BOLD);
+  font-size: 1.5em;
+  color: var(--COLOR-WHITE-BG);
+  line-height: 1.3em;
+}
+
+.section__third .p__highlight,
+.section__fifth .p__highlight {
+  color: var(--COLOR-DARK-BLACK-BLUE);
+}
+
+.section__first {
+  background-color: var(--COLOR-VIOLET);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 85% 0;
+  background-size: 130px;
+}
+.section__second {
+  background-color: var(--COLOR-DARK-GRAY-BLUE);
+}
+.section__third {
+  background-color: var(--COLOR-WHITE-BG);
+}
+.section__fourth {
+  background-color: var(--COLOR-DARK-BLACK-BLUE);
+}
+.section__fifth {
+  background-color: var(--COLOR-WHITE-BG);
+}
+
+.section__first h2,
+.section__second h2,
+.section__fourth h2 {
+  color: var(--COLOR-FONT);
+}
+.section__first .p__graduated,
+.section__second .p__graduated,
+.section__fourth .p__graduated {
+  color: var(--COLOR-FONT);
+  opacity: 0.5;
+}
+
+.section__first .p__content,
+.section__second .p__content,
+.section__fourth .p__content {
+  color: var(--COLOR-FONT);
+  opacity: 0.7;
+}
+
+.section__third h2,
+.section__fifth h2 {
+  color: var(--COLOR-DARK-GRAY-BLUE);
+}
+
+.section__third .p__graduated,
+.section__fifth .p__graduated {
+  color: var(--COLOR-DARK-GRAY-BLUE);
+  opacity: 50%;
+}
+
+.section__third .p__content,
+.section__fifth .p__content {
+  color: var(--COLOR-DARK-GRAY-BLUE);
+  opacity: 70%;
+}
+
+@media screen and (min-width: 90rem) {
+  .container {
+    display: grid;
+    max-width: 90rem;
+    height: 60vh;
+    margin: 15vh auto;
+    gap: 3em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 35vh);
+    grid-template-areas:
+      "first first second fifth"
+      "third fourth fourth fifth";
+  }
+
+  .section__card {
+    margin: 0;
+    padding: 3em;
+  }
+
+  .section__first {
+    grid-area: first;
+    background-position: 75% 0;
+    background-size: 150px;
+  }
+
+  .section__second {
+    grid-area: second;
+  }
+
+  .section__third {
+    grid-area: third;
+  }
+
+  .section__fourth {
+    grid-area: fourth;
+  }
+
+  .section__fifth {
+    grid-area: fifth;
+  }
+}
